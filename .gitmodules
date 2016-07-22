@@ -1,0 +1,3 @@
+[submodule "EasyPR"]
+	path = EasyPR
+	url = https://git.oschina.net/easypr/EasyPR.git
