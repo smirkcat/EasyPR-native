@@ -13,5 +13,141 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\core">
+      <UniqueIdentifier>{88d0cd70-8bca-483c-a226-f0c04ba8c99b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\3rdparty">
+      <UniqueIdentifier>{15db4da0-7574-4802-be49-fbf529ab03fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\core">
+      <UniqueIdentifier>{76e60ac3-1ac6-4ef7-9511-19b8b938e9e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\3rdparty">
+      <UniqueIdentifier>{dca6f7eb-431d-4b71-af47-4e08eb190ffb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\utils">
+      <UniqueIdentifier>{94c76192-ee56-443b-91ae-f5ce88e816c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\utils">
+      <UniqueIdentifier>{e5215235-9038-47cc-9501-89d4f454ee6e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\character.hpp">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\chars_identify.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\chars_recognise.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\chars_segment.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\core_func.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\feature.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\params.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\plate.hpp">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\plate_detect.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\plate_judge.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\plate_locate.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\core\plate_recognize.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\thirdparty\LBP\helper.hpp">
+      <Filter>头文件\3rdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\thirdparty\LBP\lbp.hpp">
+      <Filter>头文件\3rdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\thirdparty\mser\mser2.hpp">
+      <Filter>头文件\3rdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\thirdparty\textDetect\erfilter.hpp">
+      <Filter>头文件\3rdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\util\kv.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\util\program_options.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\util\switch.hpp">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\util\util.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\EasyPR\include\easypr\config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\EasyPR\src\core\chars_identify.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\core\chars_recognise.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\core\chars_segment.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\core\core_func.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\core\feature.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\core\params.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\core\plate_detect.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\core\plate_judge.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\core\plate_locate.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\core\plate_recognize.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\thirdparty\LBP\helper.cpp">
+      <Filter>源文件\3rdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\thirdparty\LBP\lbp.cpp">
+      <Filter>源文件\3rdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\thirdparty\mser\mser2.cpp">
+      <Filter>源文件\3rdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\thirdparty\textDetect\erfilter.cpp">
+      <Filter>源文件\3rdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\util\kv.cpp">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\util\program_options.cpp">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\EasyPR\src\util\util.cpp">
+      <Filter>源文件\utils</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -14,4 +14,20 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\tojava.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\process.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\tojava.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\process.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
