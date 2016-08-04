@@ -7,52 +7,21 @@ import java.io.IOException;
 
 import org.smirkcat.loaddll.JarDllJava;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-
-/**
- * Unit test for simple App.
- */
 public class EasyPRTest 
-    extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public EasyPRTest( String testName )
+   
+    public static void main(String[] args)
     {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( EasyPRTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    	//获取当前类所在的根目录
         String path=JarDllJava.rootPath(EasyPR.class);
-        String modelpath=path+"model";
-        System.out.println(modelpath);
-        EasyPR fun=new EasyPR(modelpath);
-        System.out.println(fun.ptrNative);
+        EasyPR fun=new EasyPR(path+"model");
         
-        byte[] img=setImageToByteArray(path+"/test.jpg");
+        byte[] img=setImageToByteArray(path+"test.jpg");
         if(img==null)
         	return;
         String result=fun.plateRecognize( img);
+        fun.delete();
         System.out.println(result);
-        
         
     }
     
