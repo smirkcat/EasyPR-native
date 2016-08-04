@@ -42,14 +42,17 @@ public class EasyPRTest
     {
         assertTrue( true );
         String path=JarDllJava.rootPath(EasyPR.class);
-        String modelpath=path+"../../../EasyPR/resources/model";
+        String modelpath=path+"model";
         System.out.println(modelpath);
         EasyPR fun=new EasyPR(modelpath);
+        System.out.println(fun.ptrNative);
         
-        System.out.println("继续");
-        byte[] img=setImageToByteArray(JarDllJava.rootPath(EasyPR.class)+"test.jpg");
-        String result=fun.plateRecognize(fun.ptrNative, img);
+        byte[] img=setImageToByteArray(path+"/test.jpg");
+        if(img==null)
+        	return;
+        String result=fun.plateRecognize( img);
         System.out.println(result);
+        
         
     }
     
