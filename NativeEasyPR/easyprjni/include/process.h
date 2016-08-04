@@ -7,12 +7,14 @@ using namespace std;
 #define _Included_Process
 
 class Process{
-	CPlateRecognize pr;
+	CPlateRecognize *pr;
 public:
 	~Process(){
+		delete pr;
 	}
 	Process(string);
 	Process();
 	string process(char*, int);
+	string process(Mat &);
 };
 #endif
