@@ -1,4 +1,4 @@
-package org.smirkcat.easypr.Impl;
+package org.smirkcat.easypr.service.Impl;
 
 import org.smirkcat.easypr.service.IImageProcessing;
 import org.smirkcat.easypr.util.EasyPRInstance;

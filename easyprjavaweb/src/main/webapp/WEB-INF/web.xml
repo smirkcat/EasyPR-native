@@ -27,7 +27,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            /WEB-INF/spring/*.xml
+            /WEB-INF/spring/spring-service.xml
         </param-value>
     </context-param>
     <!-- Spring监听配置，Web容器启动默认自动装配ApplicationContext的配置信息，与contextConfigLocation对应 -->
@@ -47,8 +47,8 @@
             </param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
-        <!-- 支持异步处理 -->
-        <async-supported>true</async-supported>
+<!--         支持异步处理
+        <async-supported>true</async-supported> -->
     </servlet>
     <servlet-mapping>
         <servlet-name>springServlet</servlet-name>

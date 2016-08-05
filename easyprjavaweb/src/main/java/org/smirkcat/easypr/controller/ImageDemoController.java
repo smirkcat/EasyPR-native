@@ -21,8 +21,8 @@ public class ImageDemoController {
 	@Autowired
 	IImageProcessing handle;
 	
-	@RequestMapping(value="/carPlateDectect",produces="text/html;charset=UTF-8")
-    public  String findFormFile(@RequestParam("inputimage") MultipartFile image) throws IOException{
+	@RequestMapping(value="/carPlateDectectFile",produces="text/html;charset=UTF-8")
+    public  String idNumIdentifyFile(@RequestParam("inputimage") MultipartFile image) throws IOException{
 		byte[] imagebyte=ToImageByte.input2byte(image.getInputStream());
 		return handle.plate(imagebyte);
 	}

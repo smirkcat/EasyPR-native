@@ -10,10 +10,8 @@
                     http://www.springframework.org/schema/mvc
                     http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	<!-- service自动装配 -->
-	<context:component-scan base-package="com.inspur.image.service.Impl">
+	<context:component-scan base-package="org.smirkcat.easypr.service.Impl">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
-
-
 </beans>
