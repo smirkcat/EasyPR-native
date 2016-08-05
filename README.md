@@ -10,15 +10,16 @@
 
 ### NativeEasyPR中easyprtest-c++测试效果如下
 ![easyprtes-cpp效果图](NativeEasyPR/easyprtest/shows.png)
-具体使用请参见[NativeEasyPR/README.md](NativeEasyPR/README.md)
+具体使用请参见[NativeEasyPR](NativeEasyPR)
 
 ### easyprjava EasyPRTest.java测试效果如下
 ![EasyPRTest.java效果图](easyprjava/shows.png)
-具体使用请参见[easyprjava/README.md](easyprjava/README.md)
+具体使用请参见[easyprjava](easyprjava)
 
-### web目标效果图如下(暂未添加)
+### java-web目标效果图如下
 此图是在去年10月份抓取的代码的演示图，于自己提供好的java接口，然后使用javaweb框架做成如下图所示的效果
-![imageDemo效果图](shows/show1.png)
+![imageDemo效果图](easyprjavaweb/shows.jpg)
+具体使用请参见[easyprjavaweb](easyprjavaweb)
 
 [1]: https://git.oschina.net/easypr/EasyPR
 [2]: https://github.com/smirkcat/EasyPR-native.git

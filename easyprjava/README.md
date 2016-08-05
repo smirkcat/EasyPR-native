@@ -8,7 +8,7 @@
 
 ### 运行
 + 此项目是maven工程项目，依赖junit,导入用最新版eclipse或者intellij-idea即可
-+ 测试请运行org.easypr.jni包下面的EasyPRTest类，集成环境下右键runas->Junit test(后面改为main函数执行)
++ 测试请运行org.easypr.jni包下面的EasyPRTest类
 
 ### 运行结构如下图
 ![EasyPRTest.java效果图](shows.png)
