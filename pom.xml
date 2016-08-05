@@ -19,5 +19,6 @@
   </properties>
   <modules>
     <module>easyprjava</module>
+    <module>easyprjavaweb</module>
   </modules>
 </project>

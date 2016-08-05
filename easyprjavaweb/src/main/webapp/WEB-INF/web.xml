@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <!-- 指定Web应用的定义名称 -->
+    <display-name>easyprjavaweb</display-name>
+
+    <!-- Spring字符编码过滤器配置，处理中文乱码 -->
+    <filter>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter
+        </filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 配置需要装载的Spring配置文件 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/spring/*.xml
+        </param-value>
+    </context-param>
+    <!-- Spring监听配置，Web容器启动默认自动装配ApplicationContext的配置信息，与contextConfigLocation对应 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <!-- Spring Servlet配置 此处必须配置controller层  ，controller必须由webmvc管理-->
+    <servlet>
+        <servlet-name>springServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>
+            	/WEB-INF/spring/spring-mvc.xml,
+                /WEB-INF/spring/spring-controller.xml
+            </param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <!-- 支持异步处理 -->
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!--指定对应的格式的浏览器处理方式 -->
+    <mime-mapping>
+        <extension>xml</extension>
+        <mime-type>text/xml</mime-type>
+    </mime-mapping>
+
+    <!-- 默认页 -->
+    <welcome-file-list>
+        <welcome-file>/jsp/imagedemo.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
