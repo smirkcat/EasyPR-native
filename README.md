@@ -16,8 +16,7 @@
 ![EasyPRTest.java效果图](easyprjava/shows.png)
 具体使用请参见[easyprjava](easyprjava)
 
-### java-web目标效果图如下
-此图是在去年10月份抓取的代码的演示图，于自己提供好的java接口，然后使用javaweb框架做成如下图所示的效果
+### java-web展示效果图如下
 ![imageDemo效果图](easyprjavaweb/shows.jpg)
 具体使用请参见[easyprjavaweb](easyprjavaweb)
 
