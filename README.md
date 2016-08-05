@@ -3,6 +3,8 @@
 + [EasyPR][1]为此工程的子模块，没有做任何修改
 + [NativeEasyPR](NativeEasyPR)提供c++层的native代码,目前只提供jni
 + [easyprjava](easyprjava)提供EasyPR的java接口
++ git clone代码之后记得git submodule update -f(强制更新一下字模块,然后按照文档替换相关源文件)
++ 或者下载zip包之后去[EasyPR][1],下载最新代码，如果使用我编译好的dll(x64_vc12)，则无需下载和更新[EasyPR][1]
 
 ### 本项目地址
 + [github][2]
@@ -10,16 +12,19 @@
 
 ### NativeEasyPR中easyprtest-c++测试效果如下
 ![easyprtes-cpp效果图](NativeEasyPR/easyprtest/shows.png)
+
 具体使用请参见[NativeEasyPR](NativeEasyPR)
 
 ### easyprjava EasyPRTest.java测试效果如下
 ![EasyPRTest.java效果图](easyprjava/shows.png)
+
 具体使用请参见[easyprjava](easyprjava)
 
 ### java-web展示效果图如下
 ![imageDemo效果图](easyprjavaweb/shows.jpg)
+
 具体使用请参见[easyprjavaweb](easyprjavaweb)
 
 [1]: https://git.oschina.net/easypr/EasyPR
 [2]: https://github.com/smirkcat/EasyPR-native.git
-[3]: https://git.oschina.net/smirkcat/EasyPR-JAVA.git
+[3]: https://git.oschina.net/smirkcat/EasyPR-native.git
