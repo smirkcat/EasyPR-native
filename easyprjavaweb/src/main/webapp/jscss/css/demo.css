@@ -1,0 +1,161 @@
+@CHARSET "UTF-8";
+.showcontain{
+	width:100%;
+}
+.demoimageshow {
+	margin: 0 atuo;
+	height:236px;
+	width: 1180px;
+	display: none;
+}
+.demoimageshow ul{
+	display:block;
+	padding:0;
+	margin:0
+}
+.demoimageshow li {
+	float: left;
+}
+
+.demoimageshow li img:hover {
+	opacity: 0.5;
+}
+.demo-contain {
+	width: 98%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.demo-panel {
+	margin: 0 atuo;
+	/* 高度453px */
+	height: 453px;
+}
+
+.panel-body-left {
+	width: 15%;
+	float: left;
+}
+.div-menu {
+	width: 80%;
+	margin: 0 auto;
+}
+.illustrate {
+	margin-top: 4px;
+	background: #e8f2f4;
+	padding: 6px 4px;
+}
+/* .showmenu .nav>li>a {
+	padding: 5px 15px;
+} */
+.panel-body-center {
+/* 	width: 50%; */
+	float: left;
+}
+#input-group{
+	width:412px;
+}
+.handel .input-group {
+	margin-top: 2px;
+	/* float: left; */
+}
+.image-show{
+	margin-top: 3px;
+}
+#handel-face-detect {
+	width: 412px;
+	margin: 0 auto;
+}
+#handel-face-compare {
+	width: 564px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+.handel-L {
+	width: 262px;
+	height: 321px;
+	float: left;
+}
+.handel-M {
+	width: 40px;
+	height: 321px;
+	float: left;
+}
+.handel-M button {
+	display: block;
+	margin-right: auto;
+	margin-left:auto; 
+	margin-top:145px; 
+}
+.handel-R {
+	width: 262px;
+	height: 321px;
+	float: left;
+}
+#handel-bottom {
+	float: left;
+	height:86px;
+	padding: 4px 4px;
+	margin-top: 15px;
+	background: #e8f2f4;
+}
+
+canvas {
+	background: #f5f5f5;
+	border: 1px solid #808080;
+}
+
+.panel-body-right {
+	width: 35%;
+	float: left;
+	height: 100%;
+}
+.panel-body-right .div-response {
+	width: 80%;
+	margin: 0 auto;
+}
+/* 返回人脸检测信息jsondiv */
+.response {
+	overflow: auto;
+	background-color: #f5f5f5;
+	padding: 9px;
+}
+
+.response .responsepre {
+	border: 0px;
+	padding: 0px;
+	margin: 0;
+}
+
+.navbar-brand {
+	padding: 10px 15px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+	background-color: #3d99fe;
+}
+
+.handel-M .btn {
+	color: #fff;
+	background-color: #3d99fe;
+}
+
+/*淡蓝颜色字体*/
+.danlan {
+	color: #3d99fe;
+}
+@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    40% {opacity: 0;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+}  
+@-webkit-keyframes fade-in {/*针对webkit内核*/  
+    0% {opacity: 0;}  
+    40% {opacity: 0;}  
+    100% {opacity: 1;}  
+}  
+#showcontain {    
+    animation: fade-in;/*动画名称*/  
+    animation-duration: 1.5s;/*动画持续时间*/  
+    -webkit-animation:fade-in 1.5s;/*针对webkit内核*/  
+}  
