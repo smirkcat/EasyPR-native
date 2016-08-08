@@ -20,5 +20,6 @@
   <modules>
     <module>easyprjava</module>
     <module>easyprjavaweb</module>
+    <module>easyprscala</module>
   </modules>
 </project>
