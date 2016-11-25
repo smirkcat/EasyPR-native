@@ -9,10 +9,10 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
         <Link Condition="'$(Configuration)'=='Debug'">
-          <AdditionalDependencies>opencv_world310d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+          <AdditionalDependencies>opencv_world310d.lib;opencv_ts300d.lib;%(AdditionalDependencies)</AdditionalDependencies>
         </Link>
         <Link Condition="'$(Configuration)'=='Release'">
-          <AdditionalDependencies>opencv_world300.lib;%(AdditionalDependencies)</AdditionalDependencies>
+          <AdditionalDependencies>opencv_world300.lib;opencv_ts300.lib;%(AdditionalDependencies)</AdditionalDependencies>
         </Link>
   </ItemDefinitionGroup>
   <ItemGroup />
