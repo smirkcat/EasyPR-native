@@ -1,4 +1,4 @@
-克隆代码之后更新一下子模块 git submodule update -f
+克隆代码之后初始化更新一下子模块 git submodule update --init --recursive
 
 ### 配置opencv环境(windows版)
 + 添加环境变量jdk的根目录%JAVA_HOME%，以及opencv3.1.0的bulid根目录%OPENCV310%

@@ -6,7 +6,7 @@
 + [easyprjava](easyprjava)提供EasyPR的java接口
 + [easyprscala](easyprscala)提供EasyPR的scala接口
 + [easyprjavaweb](easyprjavaweb)提供EasyPR的javaweb接口以及页面展示
-+ git clone代码之后记得git submodule update -f(强制更新一下子模块,然后按照文档替换相关源文件)
++ git clone代码之后记得git submodule update --init --recursive(初始化更新一下子模块,然后按照文档替换相关源文件)
 + 或者下载zip包之后去[EasyPR][5]下载最新代码，如果使用我编译好的dll(x64_vc12)，则无需下载和更新EasyPR
 
 ### 本项目地址
