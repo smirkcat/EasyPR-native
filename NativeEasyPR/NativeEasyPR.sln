@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "easyprcore", "easyprcore\ea
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "easyprtest", "easyprtest\easyprtest.vcxproj", "{0619CC72-D472-4D28-B775-850918A7844F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "easyprpy", "easyprpy\easyprpy.vcxproj", "{34E7A866-1808-4191-B785-4A25106F184B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -51,7 +53,17 @@ Global
 		{0619CC72-D472-4D28-B775-850918A7844F}.Release|Win32.ActiveCfg = Release|Win32
 		{0619CC72-D472-4D28-B775-850918A7844F}.Release|Win32.Build.0 = Release|Win32
 		{0619CC72-D472-4D28-B775-850918A7844F}.Release|x64.ActiveCfg = Release|x64
-		{0619CC72-D472-4D28-B775-850918A7844F}.Release|x64.Build.0 = Release|x64
+		{34E7A866-1808-4191-B785-4A25106F184B}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{34E7A866-1808-4191-B785-4A25106F184B}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{34E7A866-1808-4191-B785-4A25106F184B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{34E7A866-1808-4191-B785-4A25106F184B}.Debug|Win32.Build.0 = Debug|Win32
+		{34E7A866-1808-4191-B785-4A25106F184B}.Debug|x64.ActiveCfg = Debug|Win32
+		{34E7A866-1808-4191-B785-4A25106F184B}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{34E7A866-1808-4191-B785-4A25106F184B}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{34E7A866-1808-4191-B785-4A25106F184B}.Release|Win32.ActiveCfg = Release|Win32
+		{34E7A866-1808-4191-B785-4A25106F184B}.Release|Win32.Build.0 = Release|Win32
+		{34E7A866-1808-4191-B785-4A25106F184B}.Release|x64.ActiveCfg = Release|x64
+		{34E7A866-1808-4191-B785-4A25106F184B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

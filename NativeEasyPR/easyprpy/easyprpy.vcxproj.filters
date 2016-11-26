@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\tojava.h">
+    <ClInclude Include="include\py.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\include\process.h">
@@ -23,10 +23,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\tojava.cpp">
+    <ClCompile Include="..\src\process.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\process.cpp">
+    <ClCompile Include="src\py.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

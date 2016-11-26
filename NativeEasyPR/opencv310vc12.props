@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-        <IncludePath>$(OPENCV310)\include;$(IncludePath)</IncludePath>
-        <LibraryPath Condition="'$(Platform)'=='Win32'">$(OPENCV310)\x86\vc12\lib;$(LibraryPath)</LibraryPath>
-        <LibraryPath Condition="'$(Platform)'=='X64'">$(OPENCV310)\x64\vc12\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(OPENCV310)\include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Platform)'=='Win32'">$(OPENCV310)\x86\vc12\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Platform)'=='X64'">$(OPENCV310)\x64\vc12\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
-        <Link Condition="'$(Configuration)'=='Debug'">
-          <AdditionalDependencies>opencv_world310d.lib;opencv_ts300d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-        </Link>
-        <Link Condition="'$(Configuration)'=='Release'">
-          <AdditionalDependencies>opencv_world300.lib;opencv_ts300.lib;%(AdditionalDependencies)</AdditionalDependencies>
-        </Link>
+    <Link Condition="'$(Configuration)'=='Debug'">
+      <AdditionalDependencies>opencv_world310d.lib;opencv_ts300d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Link Condition="'$(Configuration)'=='Release'">
+      <AdditionalDependencies>opencv_world300.lib;opencv_ts300.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup />
 </Project>
