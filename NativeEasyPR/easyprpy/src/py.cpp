@@ -1,15 +1,19 @@
+#include<cstring>
 #include"process.h"
+#include"py.h"
 
-__declspec(dllexport) Process* init(char * modelpath){
+EXPORT Process* init(char * modelpath){
 	Process * ptr = new Process(modelpath);
 	return ptr;
 }
 
-__declspec(dllexport) const char * plateRecognize(Process * ptr, char *img){
-	string str = ptr->process(img, strlen(img));
-	return str.c_str();
+EXPORT char * plateRecognize(Process * ptr, char *img,int len){
+	string str = ptr->process(img, len);
+	char *buf = new char[str.length()+1];
+	strcpy(buf, str.c_str());
+	return buf;
 }
 
-__declspec(dllexport) void deleteptr(Process * ptr){
+EXPORT void deleteptr(Process * ptr){
 	delete ptr;
 }
