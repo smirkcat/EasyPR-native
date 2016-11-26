@@ -1,8 +1,9 @@
 ### 说明
-+ 此项目是提供车牌识别的java接口，不做源码的任何修改，只在上面增加相关接口
++ 此项目是提供车牌识别的java和python接口，不做源码的任何修改，只在上面增加相关接口
 + EasyPR([github][5])([oschina][1])为此工程的子模块，没有做任何修改
 + [EasyPR-change](EasyPR-change)替换EasyPR中的对应同名的源代码文件，不然无法加载自己定义的路径的模型文件，源代码中有bug
-+ [NativeEasyPR](NativeEasyPR)提供c++层的native代码,目前只提供jni
++ [NativeEasyPR](NativeEasyPR)提供c++层的native代码,目前提供了jni和python的c++代码
++ [easyprpython](easyprpython)提供EasyPR的python接口
 + [easyprjava](easyprjava)提供EasyPR的java接口
 + [easyprscala](easyprscala)提供EasyPR的scala接口
 + [easyprjavaweb](easyprjavaweb)提供EasyPR的javaweb接口以及页面展示
@@ -23,6 +24,11 @@
 ![EasyPRTest.java效果图](easyprjava/shows.png)
 
 具体使用请参见[easyprjava](easyprjava)或者[easyprscala](easyprscala)
+
+### easyprpython py.py测试效果如下
+![py.py效果图](easyprpython/shows.png)
+
+具体使用请参见[easyprpython](easyprpython)
 
 ### java-web展示效果图如下
 ![imageDemo效果图](easyprjavaweb/shows.jpg)
