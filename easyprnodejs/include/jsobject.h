@@ -6,19 +6,20 @@
 #include "process.h"
 using namespace v8;
 
-class PsmObject : public node::ObjectWrap {
+class JsObject : public node::ObjectWrap {
 public:
 	static void Init(v8::Isolate* isolate);
 	static void NewInstance(const v8::FunctionCallbackInfo<v8::Value>& args);
 
 private:
-	explicit PsmObject(const char * dir);
-	~PsmObject();
-
-	static int initFlag;
+	explicit JsObject(const char * dir);
+	JsObject();
+	~JsObject();
+	Process * ptr;
+	int initFlag;
 	static void GetInitFlag(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static void New(const v8::FunctionCallbackInfo<v8::Value>& args);
-	static void CardParse(const v8::FunctionCallbackInfo<v8::Value>& args);
+	static void plateRecognize(const v8::FunctionCallbackInfo<v8::Value>& args);
 	static v8::Persistent<v8::Function> constructor;
 };
 

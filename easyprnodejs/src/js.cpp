@@ -4,11 +4,11 @@
 using namespace v8;
 
 void CreateObject(const FunctionCallbackInfo<Value>& args) {
-  PsmObject::NewInstance(args);
+  JsObject::NewInstance(args);
 }
 
 void InitAll(Handle<Object> exports, Handle<Object> module) {
-  PsmObject::Init(exports->GetIsolate());
+  JsObject::Init(exports->GetIsolate());
   //module.exports 导出对象
   NODE_SET_METHOD(module, "exports", CreateObject);
 }

@@ -4,31 +4,36 @@
 
 using namespace v8;
 
-Persistent<Function> PsmObject::constructor;
+Persistent<Function> JsObject::constructor;
 
-int  PsmObject::initFlag = 0;
 
-PsmObject::PsmObject(const char* dir) {
-
+JsObject::JsObject(const char* dir) {
+	initFlag = 1;
+	ptr = new Process(dir);
 }
 
-PsmObject::~PsmObject() {
+JsObject::JsObject() {
+	initFlag = -1;
 }
 
-void PsmObject::Init(v8::Isolate* isolate) {
+JsObject::~JsObject() {
+	delete ptr;
+}
+
+void JsObject::Init(v8::Isolate* isolate) {
 	// Prepare constructor template
 	Local<FunctionTemplate> tpl = FunctionTemplate::New(isolate, New);
 	tpl->SetClassName(v8::String::NewFromUtf8(isolate, "JsObject"));
 	tpl->InstanceTemplate()->SetInternalFieldCount(1);
 
 	// Prototype
-	NODE_SET_PROTOTYPE_METHOD(tpl, "cardParse", CardParse);
+	NODE_SET_PROTOTYPE_METHOD(tpl, "plateRecognize", plateRecognize);
 	NODE_SET_PROTOTYPE_METHOD(tpl, "getInitFlag", GetInitFlag);
 
 	constructor.Reset(isolate, tpl->GetFunction());
 }
 
-void PsmObject::New(const FunctionCallbackInfo<Value>& args) {
+void JsObject::New(const FunctionCallbackInfo<Value>& args) {
 	Isolate* isolate = args.GetIsolate();
 
 	if (args.IsConstructCall()) {
@@ -38,7 +43,7 @@ void PsmObject::New(const FunctionCallbackInfo<Value>& args) {
 			v8::String::Utf8Value result(args[0]->ToString());
 			dir = std::string(*result, result.length()).c_str();
 		}
-		PsmObject* obj = new PsmObject(dir);
+		JsObject* obj = new JsObject(dir);
 		obj->Wrap(args.This());
 		args.GetReturnValue().Set(args.This());
 	}
@@ -59,7 +64,7 @@ void PsmObject::New(const FunctionCallbackInfo<Value>& args) {
 	}
 }
 
-void PsmObject::NewInstance(const FunctionCallbackInfo<Value>& args) {
+void JsObject::NewInstance(const FunctionCallbackInfo<Value>& args) {
 	Isolate* isolate = args.GetIsolate();
 	// v6/7.x
 	/*const unsigned argc = 1;
@@ -76,10 +81,11 @@ void PsmObject::NewInstance(const FunctionCallbackInfo<Value>& args) {
 	args.GetReturnValue().Set(instance);
 }
 
-void PsmObject::CardParse(const FunctionCallbackInfo<Value>& args) {
+void JsObject::plateRecognize(const FunctionCallbackInfo<Value>& args) {
 	Isolate* isolate = args.GetIsolate();
-
-	if (initFlag <= 0) {
+	JsObject* obj = ObjectWrap::Unwrap<JsObject>(args.Holder());
+	//v8::ArrayBufferView
+	if (obj->initFlag <= 0) {
 		isolate->ThrowException(v8::Exception::TypeError(v8::String::NewFromUtf8(isolate, "initFlag<0,pelese check the ini file dir")));
 		return;
 	}
@@ -111,7 +117,8 @@ void PsmObject::CardParse(const FunctionCallbackInfo<Value>& args) {
 	args.GetReturnValue().Set(reobj);
 }
 
-void PsmObject::GetInitFlag(const FunctionCallbackInfo<Value>& args) {
+void JsObject::GetInitFlag(const FunctionCallbackInfo<Value>& args) {
 	Isolate* isolate = args.GetIsolate();
-	args.GetReturnValue().Set(Int32::New(isolate, initFlag));
+	JsObject* obj = ObjectWrap::Unwrap<JsObject>(args.Holder());
+	args.GetReturnValue().Set(Int32::New(isolate, obj->initFlag));
 }
