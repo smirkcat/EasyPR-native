@@ -100,7 +100,12 @@ void JsObject::plateRecognize(const FunctionCallbackInfo<Value>& args) {
 	int len = node::Buffer::Length(args[0]);
 	char * img = node::Buffer::Data(args[0]);
 	std::string result=obj->ptr->process(img,len);
-	args.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, result.c_str()));
+	char *buf = new char[result.length() + 1];
+	strcpy(buf, result.c_str());
+	MaybeLocal<Object> rebuffer = node::Buffer::New(isolate, buf, result.length());
+	Local<Object> re= Object::New(isolate);
+	rebuffer.ToLocal(&re);
+	args.GetReturnValue().Set(re);
 }
 
 void JsObject::GetInitFlag(const FunctionCallbackInfo<Value>& args) {

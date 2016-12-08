@@ -1,5 +1,6 @@
 "use strict";
 const easypr = require('./build/Release/easyprnode');
+var iconv = require('iconv-lite');
 
 var rf = require("fs");
 var teststr = rf.readFileSync("test.jpg");
@@ -18,4 +19,5 @@ if (initflag < 1) {
     return
 }
 var re = obj.plateRecognize(teststr)
-console.log(re);
+var reutf = iconv.decode(Buffer.from(re, 'ancii'), "gb2312")
+console.log(reutf);

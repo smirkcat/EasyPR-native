@@ -26,15 +26,20 @@
 
 具体使用请参见[easyprjava](easyprjava)或者[easyprscala](easyprscala)
 
+### java-web展示效果图如下
+![imageDemo效果图](easyprjavaweb/shows.jpg)
+
+具体使用请参见[easyprjavaweb](easyprjavaweb)
+
 ### easyprpython py.py测试效果如下
 ![py.py效果图](easyprpython/shows.png)
 
 具体使用请参见[easyprpython](easyprpython)
 
-### java-web展示效果图如下
-![imageDemo效果图](easyprjavaweb/shows.jpg)
+### easyprnodejs app.js测试效果如下
+![py.py效果图](easyprnodejs/shows.png)
 
-具体使用请参见[easyprjavaweb](easyprjavaweb)
+具体使用请参见[easyprnodejs](easyprnodejs)
 
 [1]: https://git.oschina.net/easypr/EasyPR.git
 [2]: https://github.com/smirkcat/EasyPR-native.git
