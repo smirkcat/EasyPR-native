@@ -2,12 +2,9 @@
 const easypr = require('./build/Release/easyprnode');
 
 var rf = require("fs");
-var teststr = rf.readFileSync("test.jpg", 'binary');
-var v1 = Uint8Array.from(teststr);
+var teststr = rf.readFileSync("test.jpg");
 var len = Buffer.byteLength(teststr, "binary")
-console.log(len);
 var dir = __dirname + "/../model";
-console.log(dir);
 //加载dir文件夹下的配置文件
 var obj = easypr(dir);
 
@@ -20,5 +17,5 @@ if (initflag < 1) {
     console.log("Init Faild the initflag=" + initflag);
     return
 }
-var re = obj.plateRecognize(v1)
+var re = obj.plateRecognize(teststr)
 console.log(re);
