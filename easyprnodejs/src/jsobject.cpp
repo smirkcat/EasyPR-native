@@ -1,4 +1,5 @@
 ﻿#include <node.h>
+#include<node_buffer.h>
 #include <string>
 #include "jsobject.h"
 
@@ -8,8 +9,9 @@ Persistent<Function> JsObject::constructor;
 
 
 JsObject::JsObject(const char* dir) {
-	initFlag = 1;
+	initFlag = 0;
 	ptr = new Process(dir);
+	initFlag = 1;
 }
 
 JsObject::JsObject() {
@@ -84,37 +86,21 @@ void JsObject::NewInstance(const FunctionCallbackInfo<Value>& args) {
 void JsObject::plateRecognize(const FunctionCallbackInfo<Value>& args) {
 	Isolate* isolate = args.GetIsolate();
 	JsObject* obj = ObjectWrap::Unwrap<JsObject>(args.Holder());
-	//v8::ArrayBufferView
+	
 	if (obj->initFlag <= 0) {
 		isolate->ThrowException(v8::Exception::TypeError(v8::String::NewFromUtf8(isolate, "initFlag<0,pelese check the ini file dir")));
 		return;
 	}
-	else if (args.Length() < 2 || !args[0]->IsString() || !args[1]->IsInt32()) {
-		isolate->ThrowException(v8::Exception::TypeError(v8::String::NewFromUtf8(isolate, "Wrong arguments,should string and int")));
+	else if (args.Length() < 1 || !node::Buffer::HasInstance(args[0])) {
+		isolate->ThrowException(v8::Exception::TypeError(v8::String::NewFromUtf8(isolate, "Wrong arguments,should image buffer")));
 		return;
 	}
-	Local<Object> reobj = Object::New(isolate);
-	v8::String::Utf8Value result(args[0]->ToString());
-	std::string buffer = std::string(*result, result.length());
-	int policy = args[1]->Int32Value();
-	int cnum = 0, bnum = 0;
-	std::string cstr, bstr;
-	int n = card_search(buffer.c_str(), buffer.length(), policy, bnum, cnum, bstr, cstr);
-
-	Local<Number> numbank = Int32::New(isolate, bnum);
-	reobj->Set(v8::String::NewFromUtf8(isolate, "numBank"), numbank);
-
-	Local<Number> numidcard = Int32::New(isolate, cnum);
-	reobj->Set(v8::String::NewFromUtf8(isolate, "numIdCard"), numidcard);
-
-	Local<Number> numtotal = Int32::New(isolate, n);
-	reobj->Set(v8::String::NewFromUtf8(isolate, "numTotal"), numtotal);
-
-	reobj->Set(v8::String::NewFromUtf8(isolate, "strBank"), v8::String::NewFromUtf8(isolate, bstr.c_str()));
-
-	reobj->Set(v8::String::NewFromUtf8(isolate, "strIdCard"), v8::String::NewFromUtf8(isolate, cstr.c_str()));
-
-	args.GetReturnValue().Set(reobj);
+	if (obj->ptr == NULL)
+		return;
+	int len = node::Buffer::Length(args[0]);
+	char * img = node::Buffer::Data(args[0]);
+	std::string result=obj->ptr->process(img,len);
+	args.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, result.c_str()));
 }
 
 void JsObject::GetInitFlag(const FunctionCallbackInfo<Value>& args) {

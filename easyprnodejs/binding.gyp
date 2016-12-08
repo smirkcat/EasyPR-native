@@ -4,8 +4,8 @@
         "conditions": [[
             'OS=="win"', {
                 "libraries": [
-              	        "../NativeEasyPR/x64/Release/easyprpy.lib",
-                         "$(OPENCV310)/x64/vc12/lib/opencv_world300.lib"],
+              	        "<(module_root_dir)/../NativeEasyPR/x64/Release/easyprcore.lib",
+                         "$(OPENCV310)/x64/vc12/lib/opencv_world310.lib"],
                 'defines': ['']
             
             }
@@ -14,7 +14,7 @@
                 'cflags': ['-std=c++11','-fexceptions'],
                 'cflags_cc': ['-std=c++11','-fexceptions'],
                 "libraries": [
-              		"../NativeEasyPR/Release/easyprpy.a"
+              		"../NativeEasyPR/Release/easyprcore.a"
             ]
             }
         ]],
