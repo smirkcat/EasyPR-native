@@ -19,5 +19,5 @@ if (initflag < 1) {
     return
 }
 var re = obj.plateRecognize(teststr)
-var reutf = iconv.decode(Buffer.from(re, 'ancii'), "gb2312")
+var reutf = iconv.decode(re, "gb2312")
 console.log(reutf);
