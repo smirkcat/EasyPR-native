@@ -4,6 +4,7 @@
 + [EasyPR-change](EasyPR-change)替换EasyPR中的对应同名的源代码文件，不然无法加载自己定义的路径的模型文件，源代码中有bug
 + [NativeEasyPR](NativeEasyPR)提供c++层的native代码,目前提供了jni和python的c++代码(nodejs对外提供接口部分不在)
 + [easyprpython](easyprpython)提供EasyPR的python接口
++ [easyprgo](easyprgo)提供EasyPR的go接口，由于跟python一样，直接调用的是导出函数标准接口动态库，所以直接使用python生成的动态库
 + [easyprnodejs](easyprnodejs)提供EasyPR的nodejs接口，由于node addon的特殊性，使用的解决方案是动态生成的，顾c++源码放到这个文件夹下，详情请访问此文件夹
 + [easyprjava](easyprjava)提供EasyPR的java接口
 + [easyprscala](easyprscala)提供EasyPR的scala接口
@@ -35,6 +36,11 @@
 ![py.py效果图](easyprpython/shows.png)
 
 具体使用请参见[easyprpython](easyprpython)
+
+### easyprgo easyprwin.go测试效果如下
+![easyprwin.go效果图](easyprgo/src/easyprgo/shows.png)
+
+具体使用请参见[easyprgo](easyprgo/src/easyprgo)
 
 ### easyprnodejs app.js测试效果如下
 ![py.py效果图](easyprnodejs/shows.png)
