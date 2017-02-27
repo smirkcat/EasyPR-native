@@ -12,6 +12,11 @@
 + git clone代码之后记得git submodule update --init --recursive(初始化更新一下子模块,然后按照文档替换相关源文件)
 + 或者下载zip包之后去[EasyPR][5]下载最新代码，如果使用我编译好的dll(x64_vc12)，则无需下载和更新EasyPR
 
+#### 注 windows的c++代码均用vs解决方案的
++ 用到的easypr源代码，均是通过vs解决方案里面手动添加相对路径源代码，然后替换我所提供的源代码，没有linux版本，CMakeLists.txt没写完整
++ 毕竟我只是兴趣，并且意义不大，以前工作用过EasyPR，是用java调用，所以就开了此项目，这个后面加的node，python，golang调用均是后面换了工作之后所作的，
++ 问这个项目怎么用的时候，如果原EasyPR能在windows下跑成功，这个就是没问题的，opencv采用的3.1.0版本，具体请看[NativeEasyPR](NativeEasyPR)
+
 ### 本项目地址
 + [github][2]
 + [coding][4]
