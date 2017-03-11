@@ -41,10 +41,10 @@ JNIEXPORT void JNICALL deleteptr
 (JNIEnv *, jobject, Process *);
 
 static JNINativeMethod methods[]{
-	{ "plateRecognize", "(I[B)Ljava/lang/String;", (void *)plateRecognize},
-	{ "initPath", "(Ljava/lang/String;)I", (void *)initPath },
-	{ "init", "()I", (void *)init },
-	{ "delete", "(I)V", (void *)deleteptr}
+	{ "plateRecognize", "(J[B)Ljava/lang/String;", (void *)plateRecognize},
+	{ "initPath", "(Ljava/lang/String;)J", (void *)initPath },
+	{ "init", "()J", (void *)init },
+	{ "delete", "(J)V", (void *)deleteptr}
 };
 
 static const char * classPathName = "org/easyprjava/jni/EasyPR";

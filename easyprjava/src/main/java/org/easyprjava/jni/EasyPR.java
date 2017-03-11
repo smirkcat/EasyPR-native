@@ -5,7 +5,7 @@ import org.smirkcat.loaddll.JarDllJava;
 public class EasyPR {
 
 	// 函数指针地址，需要init函数初始化
-	protected int ptrNative;
+	protected long ptrNative;
 
 	public EasyPR() {
 		ptrNative = init();
@@ -21,7 +21,7 @@ public class EasyPR {
 	 * @param img
 	 * @return
 	 */
-	protected native String plateRecognize(int ptrNative, byte[] img);
+	protected native String plateRecognize(long ptrNative, byte[] img);
 
 	/**
 	 * 初始化类的模型文件
@@ -30,21 +30,21 @@ public class EasyPR {
 	 *            模型文件顶级目录
 	 * @return
 	 */
-	protected native int initPath(String path);
+	protected native long initPath(String path);
 
 	/**
 	 * 预留函数，初始化类
 	 * 
 	 * @return
 	 */
-	protected native int init();
+	protected native long init();
 
 	/**
 	 * 删除c++类，删除前确信不在调用，不然需重新执行init函数给ptrNative赋值 只能执行一次，两次出错，内存释放只有一次
 	 * @param ptrNative
 	 * @return
 	 */
-	protected native void delete(int ptrNative);
+	protected native void delete(long ptrNative);
 
 	// 静态调用只执行一次，加载本地库 ,编译好的动态放到src/main/resources下面
 	static {

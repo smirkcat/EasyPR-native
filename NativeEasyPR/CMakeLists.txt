@@ -38,7 +38,7 @@ endif()
 SET(EASYPR_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
 #源文件设置
-AUX_SOURCE_DIRECTORY(${EASYPR_BASE_DIR}/esayprjni/src OBJ_JNI)
+AUX_SOURCE_DIRECTORY(${EASYPR_BASE_DIR}/easyprjni/src OBJ_JNI)
 
 AUX_SOURCE_DIRECTORY(${EASYPR_BASE_DIR}/src OBJ_EXPORT)
 
@@ -71,17 +71,17 @@ set(EXE_SRC ${EASYPR_BASE_DIR}/easyprtest/main.cpp)
 include_directories(${EASYPR_BASE_DIR}/../EasyPR)
 include_directories(${EASYPR_BASE_DIR}/../EasyPR/include)
 include_directories(${EASYPR_BASE_DIR}/include)
-# include_directories(${EASYPR_BASE_DIR}/easyprjni/include)
+include_directories(${EASYPR_BASE_DIR}/easyprjni/include)
 
-# #用$ENV{JAVA_HOME}获取 用于加载jni头文件 前提配置好JAVA_HOME
-# INCLUDE_DIRECTORIES($ENV{JAVA_HOME}/include)
-# if(WIN32)
-#     INCLUDE_DIRECTORIES($ENV{JAVA_HOME}/include/win32)
-# ELSEIF(APPLE)
-#     INCLUDE_DIRECTORIES($ENV{JAVA_HOME}/include/darwin)
-# ELSE() 
-#     INCLUDE_DIRECTORIES($ENV{JAVA_HOME}/include/linux)
-# endif()
+#用$ENV{JAVA_HOME}获取 用于加载jni头文件 前提配置好JAVA_HOME
+INCLUDE_DIRECTORIES($ENV{JAVA_HOME}/include)
+if(WIN32)
+    INCLUDE_DIRECTORIES($ENV{JAVA_HOME}/include/win32)
+ELSEIF(APPLE)
+    INCLUDE_DIRECTORIES($ENV{JAVA_HOME}/include/darwin)
+ELSE() 
+    INCLUDE_DIRECTORIES($ENV{JAVA_HOME}/include/linux)
+endif()
 
 link_directories(./)
 #生成easyprcore静态库
