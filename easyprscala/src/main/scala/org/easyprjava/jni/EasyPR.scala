@@ -5,12 +5,12 @@ import java.io._
 
 class EasyPR{
 
-  @native protected def init(): Int
-  @native protected def initPath(path: String): Int
-  @native protected def plateRecognize(ptrNative: Int, img: Array[Byte]): String
-  @native protected def delete(ptrNative: Int): Unit
+  @native protected def init(): Long
+  @native protected def initPath(path: String): Long
+  @native protected def plateRecognize(ptrNative: Long, img: Array[Byte]): String
+  @native protected def delete(ptrNative: Long): Unit
   
-  var ptrNative: Int = 0
+  var ptrNative: Long = 0
   
   def plateRecognize(img: Array[Byte]): String = {
     plateRecognize(ptrNative, img)
