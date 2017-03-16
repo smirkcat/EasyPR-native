@@ -58,8 +58,7 @@ public class EasyPR {
 		} catch (Exception e) {
 			System.err.println("加载动态库easyprjni失败，错误日志:" + e.getMessage());
 		}
-		systemType = System.getProperty("os.name");
-		String osName = systemType.toLowerCase();
+		String osName = System.getProperty("os.name").toLowerCase();
 		if (osName.indexOf("win") != -1) {
 			encodestr = "gbk";
 		} else {
