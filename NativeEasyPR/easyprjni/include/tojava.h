@@ -13,7 +13,7 @@ extern "C" {
  * Method:    plateRecognize
  * Signature: (I[B)Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL plateRecognize
+JNIEXPORT jbyteArray JNICALL plateRecognize
 (JNIEnv *, jobject, Process *, jbyteArray);
 
 /*
@@ -41,7 +41,7 @@ JNIEXPORT void JNICALL deleteptr
 (JNIEnv *, jobject, Process *);
 
 static JNINativeMethod methods[]{
-	{ "plateRecognize", "(J[B)Ljava/lang/String;", (void *)plateRecognize},
+	{ "plateRecognize", "(J[B)[B", (void *)plateRecognize},
 	{ "initPath", "(Ljava/lang/String;)J", (void *)initPath },
 	{ "init", "()J", (void *)init },
 	{ "delete", "(J)V", (void *)deleteptr}

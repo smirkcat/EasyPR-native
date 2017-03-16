@@ -1,5 +1,7 @@
 package org.easyprjava.jni;
 
+import java.io.UnsupportedEncodingException;
+
 import org.smirkcat.loaddll.JarDllJava;
 
 public class EasyPR {
@@ -21,7 +23,7 @@ public class EasyPR {
 	 * @param img
 	 * @return
 	 */
-	protected native String plateRecognize(long ptrNative, byte[] img);
+	protected native byte[] plateRecognize(long ptrNative, byte[] img);
 
 	/**
 	 * 初始化类的模型文件
@@ -46,6 +48,8 @@ public class EasyPR {
 	 */
 	protected native void delete(long ptrNative);
 
+	private static String encodestr = null;
+
 	// 静态调用只执行一次，加载本地库 ,编译好的动态放到src/main/resources下面
 	static {
 		try {
@@ -54,6 +58,13 @@ public class EasyPR {
 		} catch (Exception e) {
 			System.err.println("加载动态库easyprjni失败，错误日志:" + e.getMessage());
 		}
+		systemType = System.getProperty("os.name");
+		String osName = systemType.toLowerCase();
+		if (osName.indexOf("win") != -1) {
+			encodestr = "gbk";
+		} else {
+			encodestr = "utf-8";
+		}
 	}
 	/**
 	 * 提供对外处理的接口
@@ -61,7 +72,15 @@ public class EasyPR {
 	 * @return
 	 */
 	public String plateRecognize(byte[] img){
-		return plateRecognize(ptrNative, img);
+		byte[] strbyte=plateRecognize(ptrNative, img);
+		String str="";
+		try {
+			str = new String(strbyte,encodestr);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return str;
 	}
 	/**
 	 * 对外提供的释放c++内存函数

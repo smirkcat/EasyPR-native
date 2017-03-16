@@ -8,10 +8,12 @@ string Process::process(Mat &src){
 	if (!src.data)
 		return plate;
 	vector<CPlate> plateVec;
-
 	int result = pr->plateRecognize(src, plateVec);
 	if (result == 0) {
 		size_t num = plateVec.size();
+		if (num<=0){
+			return plate;
+		}
 		plate = plateVec[0].getPlateStr();
 		for (size_t i = 1; i < num; i++) {
 			plate = plate + "," + plateVec[i].getPlateStr();
@@ -22,6 +24,8 @@ string Process::process(Mat &src){
 
 string Process::process(char* imagebuffer, int size){
 	Mat src = imdecode(Mat(1, size, CV_8U, imagebuffer), IMREAD_COLOR);
+	if (!src.data)
+		return "";
 	return this->process(src);
 }
 Process::Process(){

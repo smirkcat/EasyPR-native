@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from easyprpy import * 
+import easyprpy
 
 if __name__ == '__main__':
     fp = open('test.jpg','rb')
     data = fp.read()
     datalen=len(data)
-    easypr= EasyPR("easyprpy.dll","../model")
+    easypr= easyprpy.EasyPR("../model")
     st=easypr.plateRecognize(data,datalen)
     print st

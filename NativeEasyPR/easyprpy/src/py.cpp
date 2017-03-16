@@ -4,13 +4,13 @@
 #include<string>
 using namespace std;
 
-EXPORT uint init(char * modelpath){
+EXPORT long init(char * modelpath){
 	Process * ptr = new Process(modelpath);
-	unsigned int re = (unsigned int)ptr;
+	long re = (long)ptr;
 	return re;
 }
 
-EXPORT char * plateRecognize(uint ptr, char *img,int len){
+EXPORT char * plateRecognize(long ptr, char *img, int len){
 	Process *p = (Process *)ptr;
 	string str = p->process(img, len);
 	char *buf = new char[str.length()+1];
@@ -18,7 +18,7 @@ EXPORT char * plateRecognize(uint ptr, char *img,int len){
 	return buf;
 }
 
-EXPORT void deleteptr(uint ptr){
+EXPORT void deleteptr(long ptr){
 	Process *p = (Process *)ptr;
 	delete p;
 }

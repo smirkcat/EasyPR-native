@@ -7,8 +7,8 @@ using namespace cv;
 using namespace easypr;
 using namespace std;
 int main(){
-	//Ä£ĞÍÎÄ¼şmodel ºÍprovince_mappingĞè·Åµ½Ò»¸öÎÄ¼ş¼ĞÏÂÃæ£¬ÕâÀïÒÑ¾­ÌáÈ¡³öÀ´·Åµ½modelÎÄ¼şÏÂ
-	//Ô´³ÌĞòÃ»ÓĞ´¦Àí¼ÓÔØÊ§°ÜÇé¿ö£¬ºÜÊÇÔã¸â,pathÎª×Ô¼ºµÄmodelÎÄ¼şÂ·¾¶
+	//æ¨¡å‹æ–‡ä»¶model å’Œprovince_mappingéœ€æ”¾åˆ°ä¸€ä¸ªæ–‡ä»¶å¤¹ä¸‹é¢ï¼Œè¿™é‡Œå·²ç»æå–å‡ºæ¥æ”¾åˆ°modelæ–‡ä»¶ä¸‹
+	//æºç¨‹åºæ²¡æœ‰å¤„ç†åŠ è½½å¤±è´¥æƒ…å†µï¼Œå¾ˆæ˜¯ç³Ÿç³•,pathä¸ºè‡ªå·±çš„modelæ–‡ä»¶è·¯å¾„
 	string path = "D:/workspace/git/EasyPR-native/model";
 	//string path = "/root/ccccc/EasyPR-native/model";
 	Process *pr=new Process(path);

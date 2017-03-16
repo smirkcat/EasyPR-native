@@ -8,7 +8,7 @@ jstring stringTojstring(JNIEnv* env, const char* pat)
 	jmethodID ctorID = env->GetMethodID(strClass, "<init>", "([BLjava/lang/String;)V");
 	jbyteArray bytes = env->NewByteArray(strlen(pat));
 	env->SetByteArrayRegion(bytes, 0, strlen(pat), (jbyte*)pat);
-	//´Ë´¦ÓÃGB2312ÊÇÒòÎªchar*ÖÐÎÄÕâ¸ö·½Ê½±£´æ£¬Èç¹û»»³ÉUTF-8ÈÏÎªchar*ÊÇUTF-8ÏÔÈ»²»¶Ô,linuxÒ²²âÊÔ³É¹¦
+	//æ­¤å¤„ç”¨GB2312æ˜¯å› ä¸ºchar*ä¸­æ–‡è¿™ä¸ªæ–¹å¼ä¿å­˜ï¼Œå¦‚æžœæ¢æˆUTF-8è®¤ä¸ºchar*æ˜¯UTF-8æ˜¾ç„¶ä¸å¯¹,linuxä¹Ÿæµ‹è¯•æˆåŠŸ
 
 	jstring encoding = env->NewStringUTF("GB2312");
 
@@ -37,7 +37,7 @@ char* jstringTostring(JNIEnv* env, jstring jstr)
 	return rtn;
 }
 
-JNIEXPORT jstring JNICALL plateRecognize
+JNIEXPORT jbyteArray JNICALL plateRecognize
 (JNIEnv *env, jobject obj, Process *ptr, jbyteArray img){
 	jboolean isCopy = JNI_FALSE;
 	int size = env->GetArrayLength(img);
@@ -46,17 +46,17 @@ JNIEXPORT jstring JNICALL plateRecognize
 	{
 		return NULL;
 	}
-	//´Ë´¦Ç°ÃæÍ¨ÓÃ
-	//´Ë´¦Ö»ÊÇ²âÊÔ ±àÐ´²âÊÔ³ÌÐòÇëÐÞ¸Äprocessº¯Êý
-
+	//æ­¤å¤„å‰é¢é€šç”¨
+	//æ­¤å¤„åªæ˜¯æµ‹è¯• ç¼–å†™æµ‹è¯•ç¨‹åºè¯·ä¿®æ”¹processå‡½æ•°
 	std::string result = ptr->process((char*)imagebuffer, size);
 
-	//´Ë´¦ºóÃæÍ¨ÓÃ
+	//æ­¤å¤„åŽé¢é€šç”¨
 
 	env->ReleaseByteArrayElements(img, imagebuffer, JNI_COMMIT);
-
-	jstring  jresult = stringTojstring(env, result.c_str());
-	return jresult;
+	jbyte *by = (jbyte*)result.c_str();
+	jbyteArray jarray = env->NewByteArray(result.length());
+	env->SetByteArrayRegion(jarray, 0, result.length(), by);
+	return jarray;
 }
 
 

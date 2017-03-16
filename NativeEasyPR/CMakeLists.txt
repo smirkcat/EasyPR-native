@@ -40,6 +40,8 @@ SET(EASYPR_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 #源文件设置
 AUX_SOURCE_DIRECTORY(${EASYPR_BASE_DIR}/easyprjni/src OBJ_JNI)
 
+AUX_SOURCE_DIRECTORY(${EASYPR_BASE_DIR}/easyprpy/src OBJ_PY)
+
 AUX_SOURCE_DIRECTORY(${EASYPR_BASE_DIR}/src OBJ_EXPORT)
 
 # 源文件 由于core下面多了一个plate.cpp所以不能用上面的
@@ -71,6 +73,7 @@ set(EXE_SRC ${EASYPR_BASE_DIR}/easyprtest/main.cpp)
 include_directories(${EASYPR_BASE_DIR}/../EasyPR)
 include_directories(${EASYPR_BASE_DIR}/../EasyPR/include)
 include_directories(${EASYPR_BASE_DIR}/include)
+include_directories(${EASYPR_BASE_DIR}/easyprpy/include)
 include_directories(${EASYPR_BASE_DIR}/easyprjni/include)
 
 #用$ENV{JAVA_HOME}获取 用于加载jni头文件 前提配置好JAVA_HOME
@@ -93,6 +96,11 @@ target_link_libraries(${CORE_LIB} ${OpenCV_LIBS})
 set(JNI_LIB easyprjni)
 add_library(${JNI_LIB} SHARED ${OBJ_JNI} ${OBJ_EXPORT})
 target_link_libraries(${JNI_LIB} ${CORE_LIB} ${OpenCV_LIBS})
+
+#生成easyprpy动态库
+set(PY_LIB easyprpy)
+add_library(${PY_LIB} SHARED ${OBJ_PY} ${OBJ_EXPORT})
+target_link_libraries(${PY_LIB} ${CORE_LIB} ${OpenCV_LIBS})
 
 #生成可执行文件
 add_executable(easypr ${OBJ_EXPORT} ${EXE_SRC})
