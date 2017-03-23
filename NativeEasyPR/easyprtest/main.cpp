@@ -13,7 +13,7 @@ int main(){
 	//string path = "/root/ccccc/EasyPR-native/model";
 	Process *pr=new Process(path);
 	
-	Mat src = imread("D:/workspace/git/EasyPR-native/EasyPR/resources/image/test.jpg");
+	Mat src = imread("D:/workspace/git/EasyPR-native/test.jpg");
 	//Mat src = imread("/root/ccccc/EasyPR-native/EasyPR/resources/image/test.jpg");
 	string plate=pr->process(src);
 	cout << plate << endl;

@@ -97,8 +97,8 @@ set(JNI_LIB easyprjni)
 add_library(${JNI_LIB} SHARED ${OBJ_JNI} ${OBJ_EXPORT})
 target_link_libraries(${JNI_LIB} ${CORE_LIB} ${OpenCV_LIBS})
 
-#生成easyprpy动态库
-set(PY_LIB easyprpy)
+#生成easyprexport动态库
+set(PY_LIB easyprexport)
 add_library(${PY_LIB} SHARED ${OBJ_PY} ${OBJ_EXPORT})
 target_link_libraries(${PY_LIB} ${CORE_LIB} ${OpenCV_LIBS})
 
