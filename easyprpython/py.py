@@ -18,7 +18,7 @@ if __name__ == '__main__':
     fp = open('test.jpg','rb')
     data = fp.read()
     datalen=len(data)
-    easypr=ctypes.CDLL("./easyprpy"+Gsuffix)
+    easypr=ctypes.CDLL("./easyprexport"+Gsuffix)
     modelpath=os.path.join("../model")
     ptr=easypr.init(modelpath)
     easypr.plateRecognize.restype=ctypes.c_char_p

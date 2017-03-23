@@ -15,7 +15,7 @@ def suffix():
 def initeasyprpy():
     pathdll=os.path.split(os.path.realpath(__file__))[0]
     Suffix=suffix()
-    easypr=ctypes.CDLL(os.path.join(pathdll+"/easyprpy"+Suffix))
+    easypr=ctypes.CDLL(os.path.join(pathdll+"/easyprexport"+Suffix))
     easypr.plateRecognize.restype=ctypes.c_char_p
     return easypr
 

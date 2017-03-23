@@ -12,10 +12,18 @@
 + git clone代码之后记得git submodule update --init --recursive(初始化更新一下子模块,然后按照文档替换相关源文件)
 + 或者下载zip包之后去[EasyPR][5]下载最新代码，如果使用我编译好的dll(x64_vc12)，则无需下载和更新EasyPR
 
-#### 注 windows的c++代码均用vs解决方案的
-+ 用到的easypr源代码，均是通过vs解决方案里面手动添加相对路径源代码，然后替换我所提供的源代码，没有linux版本，CMakeLists.txt没写完整
-+ 毕竟我只是兴趣，并且意义不大，以前工作用过EasyPR，是用java调用，所以就开了此项目，这个后面加的node，python，golang调用均是后面换了工作之后所作的，
-+ 问这个项目怎么用的时候，如果原EasyPR能在windows下跑成功，这个就是没问题的，opencv采用的3.1.0版本，具体请看[NativeEasyPR](NativeEasyPR)
+### 环境
+#### 1.windows的c++代码均用vs解决方案的
++ 用到的easypr源代码，均是通过vs解决方案里面手动添加相对路径源代码，然后替换我所提供的源代码；
++ 以前工作用过EasyPR，是用java调用，所以就开了此项目，这个后面加的node，python，golang调用均是后面换了工作之后所作的；
++ 问这个项目怎么用的时候，如果原EasyPR能在windows下跑成功，这个就是没问题的，opencv采用的3.1.0版本，具体请看[NativeEasyPR](NativeEasyPR)。
+
+#### 2.linux版本请使用camke3.1.0版本以上
++ 低于cmake3.1.0编译无法通过的，EasyPR官网是写的2.8.0，但是这个版本无法编译通过的，camke写法有变化；
++ 我在centos7 64位下测试，输出结果跟windows有差别，特别是编码这块，windows输出就是gbk编码，linux就变成utf-8了，应该是编译器的问题，以前老版本在ubuntu下测试时没问题的；
++ 还有中文某些情况下没有，比如车牌什么颜色不输出，只有车牌号，还有同样识别车牌的颜色，sobel，mser，识别结果有出入，不知道是我设置的问题，还是源码本身的问题，主要设置函数 pr->setDetectType() 在NativeEasyPR/src/process.cpp下请自行测试;
++ 如果有建议的建议给出，谢谢，具体请看[NativeEasyPR](NativeEasyPR)。
+
 
 ### 本项目地址
 + [github][2]

@@ -33,7 +33,7 @@ Process::Process(){
 	pr->setLifemode(true);
 	pr->setDebug(false);
 	pr->setMaxPlates(4);
-	//pr.setDetectType(PR_DETECT_COLOR | PR_DETECT_SOBEL);
+	//pr->setDetectType(PR_DETECT_COLOR | PR_DETECT_SOBEL);
 	pr->setDetectType(easypr::PR_DETECT_CMSER);
 }
 Process::Process(string path){
@@ -41,8 +41,8 @@ Process::Process(string path){
 	pr->setLifemode(true);
 	pr->setDebug(false);
 	pr->setResultShow(false);
-	//pr.setDetectType(PR_DETECT_COLOR | PR_DETECT_SOBEL|PR_DETECT_CMSER);
-	pr->setDetectType(PR_DETECT_COLOR | PR_DETECT_CMSER);
+	pr->setDetectType(PR_DETECT_SOBEL | PR_DETECT_CMSER);
+	//pr->setDetectType(PR_DETECT_COLOR | PR_DETECT_CMSER);
 
 	//kv_ 属性需设置成公有属性
 	pr->LoadSVM((path + "/svm.xml"));

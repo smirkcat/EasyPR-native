@@ -29,7 +29,7 @@ func BytePtr(b []byte) uintptr {
 }
 
 func main() {
-	lib := syscall.NewLazyDLL("./easyprpy.dll")
+	lib := syscall.NewLazyDLL("./easyprexport.dll")
 	err := lib.Load()
 	if err != nil {
 		fmt.Println(err)

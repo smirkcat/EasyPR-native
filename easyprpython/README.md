@@ -1,12 +1,22 @@
 ### 使用了python ctypes方式调用
 
-### opencv环境变量设置（暂时只有windows_x64版本）
-去官网下载opencv3.1.0之后，假设opencv根目录为xxx, 则需把xxx\build\x64\vc12\bin加进系统path环境变量下
-
 ### 运行
+#### windows
++ 把NativeEasyPR 生成的库 easyprexport.dll 复制到当前目录
++ 运行
 ```
-python py.py
+$ chcp 936
+$ python py.py
+$ python easypr.py
 ```
+
+#### linux 
++ 把NativeEasyPR 生成的库 libeasyprexport.so 复制到当前目录 改名easyprexport.so
++ 运行
+```
+$ python py.py
+```
+
 得到结果 *蓝牌:苏EUK722*
 
 ### 运行结构如下图
