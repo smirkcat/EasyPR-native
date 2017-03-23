@@ -2,8 +2,8 @@
 
 ### 运行
 #### windows
-+ 把NativeEasyPR 生成的库 easyprexport.dll 复制到当前目录
-+ 运行
+- 把NativeEasyPR 生成的库 easyprexport.dll 复制到当前目录
+- 运行
 ```
 $ chcp 936
 $ python py.py
@@ -11,8 +11,8 @@ $ python easypr.py
 ```
 
 #### linux 
-+ 把NativeEasyPR 生成的库 libeasyprexport.so 复制到当前目录 改名easyprexport.so
-+ 运行
+- 把NativeEasyPR 生成的库 libeasyprexport.so 复制到当前目录 改名easyprexport.so
+- 运行
 ```
 $ python py.py
 ```

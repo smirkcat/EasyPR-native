@@ -2,16 +2,15 @@
 
 ### 运行
 #### windows
-+ 把NativeEasyPR 生成的库 easyprexport.dll 复制到当前目录
-+ 运行
+- 把NativeEasyPR 生成的库 easyprexport.dll 复制到当前目录
+- 运行 
 ```
-$ chcp 936
 $ go build easyprwin.go
 $ easyprwin.exe
 ```
 
 #### linux 
-+ 暂无，考虑用cgo
+- 暂无，考虑用cgo
 
 得到结果 *蓝牌:苏EUK722*
 

@@ -1,7 +1,8 @@
 ### 使用了node addon c++ object
 
-### opencv环境变量设置（暂时只有windows_x64版本）
-去官网下载opencv3.1.0之后，假设opencv根目录为xxx, 则需把xxx\build\x64\vc12\bin加进系统path环境变量下
+### node环境安装
+- 去官网下载node安装包，[下载地址](https://nodejs.org/en/download)
+- 安装时需要选着npm
 
 ### 编译环境准备
 ```

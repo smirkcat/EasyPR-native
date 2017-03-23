@@ -4,7 +4,9 @@
 + [EasyPR-change](EasyPR-change)替换EasyPR中的对应同名的源代码文件，不然无法加载自己定义的路径的模型文件，源代码中有bug
 + [NativeEasyPR](NativeEasyPR)提供c++层的native代码,目前提供了jni和python的c++代码(nodejs对外提供接口部分不在)
 + [easyprpython](easyprpython)提供EasyPR的python接口
-+ [easyprgo](easyprgo)提供EasyPR的go接口，由于跟python一样，直接调用的是导出函数标准接口动态库，所以直接使用python生成的动态库
++ [easyprgo](easyprgo)提供EasyPR的go接口
+    - winodws 由于跟python一样，直接调用的是导出函数标准接口动态库，所以直接使用python生成的动态库；
+    - linux暂无，考虑用cgo。
 + [easyprnodejs](easyprnodejs)提供EasyPR的nodejs接口，由于node addon的特殊性，使用的解决方案是动态生成的，顾c++源码放到这个文件夹下，详情请访问此文件夹
 + [easyprjava](easyprjava)提供EasyPR的java接口
 + [easyprscala](easyprscala)提供EasyPR的scala接口
@@ -19,7 +21,7 @@
 + 问这个项目怎么用的时候，如果原EasyPR能在windows下跑成功，这个就是没问题的，opencv采用的3.1.0版本，具体请看[NativeEasyPR](NativeEasyPR)。
 
 #### 2.linux版本请使用camke3.1.0版本以上
-+ 低于cmake3.1.0编译无法通过的，EasyPR官网是写的2.8.0，但是这个版本无法编译通过的，camke写法有变化；
++ 低于cmake3.1.0编译无法通过的，camke写法有变化；
 + 我在centos7 64位下测试，输出结果跟windows有差别，特别是编码这块，windows输出就是gbk编码，linux就变成utf-8了，应该是编译器的问题，以前老版本在ubuntu下测试时没问题的；
 + 还有中文某些情况下没有，比如车牌什么颜色不输出，只有车牌号，还有同样识别车牌的颜色，sobel，mser，识别结果有出入，不知道是我设置的问题，还是源码本身的问题，主要设置函数 pr->setDetectType() 在NativeEasyPR/src/process.cpp下请自行测试;
 + 如果有建议的建议给出，谢谢，具体请看[NativeEasyPR](NativeEasyPR)。

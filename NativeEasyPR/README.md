@@ -12,7 +12,7 @@
 + 去官网下载opencv3.1.0之后，假设opencv根目录为xxx, 则需把xxx\build\x64\vc12\bin加进系统path环境变量下
 + 安装java环境，添加环境变量jdk的根目录%JAVA_HOME%
 + 然后用vs2013打开[NativeEasyPR.sln](NativeEasyPR.sln)即可，生成对应的包，在配置管理器里面配置需要生成的目标
-+ 我这里以realse_x64为例，有用的三个文件会在当前路径/x64/realse下生成
++ 我这里以release_x64为例，有用的三个文件会在当前路径/x64/Release下生成
     - easypr.exe 单机测试 修改测试路径请修改 easypertest/main.cpp代码
     - easyprjni.dll java调用需要
     - easyprexport.dll python和go语言调用需要
