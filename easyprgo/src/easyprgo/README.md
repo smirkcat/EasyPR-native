@@ -10,9 +10,18 @@ $ easyprwin.exe
 ```
 
 #### linux 
-- 暂无，考虑用cgo
+- 设置 环境变量LD_LIBRARY_PATH  export LD_LIBRARY_PATH=/root/utils/src/lib 这里为放置libeasyprexport.so的路径
+- 运行
+```
+$ go build easyprlinux.go
+$ ./easyprlinux
+EUK722;蓝牌:苏
+```
 
 得到结果 *蓝牌:苏EUK722*
 
 ### windows运行结构如下图
 ![easypr.go效果图](shows.png)
+
+### linux运行结构如下图
+![easypr.go效果图](linuxshow.png)
