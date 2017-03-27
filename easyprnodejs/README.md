@@ -5,14 +5,14 @@
 - 安装时需要选着npm
 
 ### 编译环境准备
-```
-npm install node-gyp -g
-npm install iconv-lite
+```bash
+$ npm install node-gyp -g
+$ npm install iconv-lite
 ```
 
 ### 运行
-```
-node app.js
+```bash
+$ node app.js
 ```
 得到结果 *蓝牌:苏EUK722*
 

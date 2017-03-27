@@ -13,7 +13,7 @@
 + 安装java环境，添加环境变量jdk的根目录%JAVA_HOME%
 + 然后用vs2013打开[NativeEasyPR.sln](NativeEasyPR.sln)即可，生成对应的包，在配置管理器里面配置需要生成的目标
 + 我这里以release_x64为例，有用的三个文件会在当前路径/x64/Release下生成
-    - easypr.exe 单机测试 修改测试路径请修改 easypertest/main.cpp代码
+    - easypr.exe 单机测试 修改测试路径请修改[easypertest/main.cpp](easypertest/main.cpp)代码
     - easyprjni.dll java调用需要
     - easyprexport.dll python和go语言调用需要
 
@@ -31,7 +31,7 @@ $ make -j8
 + 有用的三个文件会在当前路径build目录下生成
     - easypr 单机测试 修改测试路径请修改 easypertest/main.cpp代码
     - libeasyprjni.so java调用需要 重命名easyprjni.so
-    - libeasyprexport.so python语言调用需要 easyprexport.so
+    - libeasyprexport.so python和go语言调用需要 python调用重命名easyprexport.so
 
 ###　原生c++测试效果如下图
 ![easyprtes-cpp效果图](easyprtest/shows.png)

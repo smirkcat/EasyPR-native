@@ -13,7 +13,7 @@
 + 此项目是maven工程项目，导入用最新版eclipse或者intellij-idea即可
 + 测试请运行src/test下org.easypr.jni包下面的EasyPRTest类
 + 命令行运行
-```
+```bash
 $ java org.easyprjava.jni.EasyPRTest
 ```
 
