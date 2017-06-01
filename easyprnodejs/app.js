@@ -1,5 +1,13 @@
 "use strict";
-const easypr = require('./build/Release/easyprnode');
+var os = require('os')
+var platform = os.platform();
+var easypr=null
+console.log(platform);
+if (platform == 'win32') {
+    easypr = require('./node_mode/windows/easyprnode')
+} else {
+    easypr = require('./node_mode/linux/easyprnode')
+}
 var iconv = require('iconv-lite');
 
 var rf = require("fs");
