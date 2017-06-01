@@ -33,7 +33,7 @@
                     ],
                 'cflags_cc': ['-std=c++11','-fexceptions'],
                 "libraries": [
-              		"../NativeEasyPR/build/easyprcore.a",
+              		"<(module_root_dir)/../NativeEasyPR/build/libeasyprcore.a",
                     "<!@(node find-opencv.js --libs)"
                 ]
             }
@@ -50,7 +50,7 @@
                 "GCC_ENABLE_CPP_EXCEPTIONS": "YES"
             },
                 "libraries": [
-                    "../NativeEasyPR/build/easyprcore.a",
+                    "<(module_root_dir)/../NativeEasyPR/build/easyprcore.a",
                     "<!@(node find-opencv.js --libs)"
                 ]
           }

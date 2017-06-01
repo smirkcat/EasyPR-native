@@ -7,14 +7,14 @@
 - 把NativeEasyPR 生成的库 easyprjni.dll 复制到[src/main/resources/dll](src/main/resources/dll)目录下
 
 #### linux 
-- 把NativeEasyPR 生成的库 easyprjni.dll 复制到[src/main/resources/dll](src/main/resources/dll)目录下，改名easyprjni.so
+- 把NativeEasyPR 生成的库 libeasyprjni.so 复制到[src/main/resources/dll](src/main/resources/dll)目录下，改名easyprjni.so
 
 #### 运行
 - 此项目是maven工程项目，依赖junit,导入用最新版eclipse或者intellij-idea即可
 - scala配置环境，请参考项目[loaddll][3]
 - 测试请运行org.easypr.jni包下面的EasyPRTest类
 
-### 运行结构如下图
+### 运行结果如下图
 ![EasyPRTest.scala效果图](shows.png)
 
 [1]: https://git.oschina.net/smirkcat/ImgJni.git

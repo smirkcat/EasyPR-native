@@ -7,7 +7,7 @@
 + 把NativeEasyPR 生成的库 easyprjni.dll 复制到[src/main/resources/dll](src/main/resources/dll)目录下
 
 #### linux 
-+ 把NativeEasyPR 生成的库 easyprjni.dll 复制到[src/main/resources/dll](src/main/resources/dll)目录下，改名easyprjni.so
++ 把NativeEasyPR 生成的库 libeasyprjni.so 复制到[src/main/resources/dll](src/main/resources/dll)目录下，改名easyprjni.so
 
 #### 运行
 + 此项目是maven工程项目，导入用最新版eclipse或者intellij-idea即可

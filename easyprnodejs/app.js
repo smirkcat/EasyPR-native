@@ -5,8 +5,10 @@ var easypr=null
 console.log(platform);
 if (platform == 'win32') {
     easypr = require('./node_mode/windows/easyprnode')
-} else {
+} else if (platform == ';inux'){
     easypr = require('./node_mode/linux/easyprnode')
+} else {
+    throw new Error("not support this platform " +platform);
 }
 var iconv = require('iconv-lite');
 
@@ -27,5 +29,10 @@ if (initflag < 1) {
     return
 }
 var re = obj.plateRecognize(teststr)
-var reutf = iconv.decode(re, "gb2312")
+var reutf = ""
+if (platform == 'win32') {
+    reutf = iconv.decode(re, "gb2312")
+}else{
+    reutf = iconv.decode(re, "utf-8")
+}
 console.log(reutf);
