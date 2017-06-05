@@ -2,17 +2,18 @@
 + 此项目是提供开源车牌识别系统[EasyPR][5]的java,scala,python,nodejs,go语言(windows和linux)调用的简单接口
 + EasyPR([github][5])([oschina][1])为此工程的子模块，没有做任何修改
 + [EasyPR-change](EasyPR-change)替换EasyPR中的对应同名的源代码文件，不然无法加载自己定义的路径的模型文件，源代码中有bug
-+ [NativeEasyPR](NativeEasyPR)提供c++层的native代码,目前提供了jni和python的c++代码(nodejs除外)
++ [NativeEasyPR](NativeEasyPR)提供c++层的native代码,目前提供了jni、python、go和nodejs需要的c++代码(nodejs还需要另外的c++代码，在easyprnodejs种)
 + [easyprpython](easyprpython)提供EasyPR的python接口，采用ctypes，使用的库是标准c语言导出的动态库接口
 + [easyprgo](easyprgo)提供EasyPR的go接口，使用的库是标准c语言导出的动态库接口，所以库与python使用的相同
     - winodws使用[syscall.NewLazyDLL][6]
     - linux使用[cgo][7]
-+ [easyprnodejs](easyprnodejs)提供EasyPR的nodejs接口，由于node addon的特殊性，使用的解决方案是动态生成的，顾c++源码放到这个文件夹下，详情请访问此文件夹
++ [easyprnodejs](easyprnodejs)提供EasyPR的nodejs接口，由于node addon的特殊性，使用的解决方案是动态生成的，一部分c++源码放到这个文件夹下，详情请访问此文件夹
 + [easyprjava](easyprjava)提供EasyPR的java接口
 + [easyprscala](easyprscala)提供EasyPR的scala接口
 + [easyprjavaweb](easyprjavaweb)提供EasyPR的javaweb接口以及页面展示
 + git clone代码之后记得git submodule update --init --recursive(初始化更新一下子模块,然后按照文档替换相关源文件)
-+ 或者下载zip包之后去[EasyPR][5]下载最新代码，如果使用我编译好的dll(x64_vc12)，则无需下载和更新EasyPR
++ 或者去[EasyPR][5]下载分支[aec8dda][8]的代码，如果是最新版可能有问题
++ 如果使用我编译好的dll0(x64_vc12)和so(x64_centos7)，则无需下载和更新EasyPR
 
 ### 环境
 #### 1.windows-vs2013
@@ -69,3 +70,4 @@
 [5]: https://github.com/liuruoze/EasyPR.git
 [6]: https://github.com/golang/go/wiki/WindowsDLLs 
 [7]: https://github.com/golang/go/wiki/cgo
+[8]: https://github.com/liuruoze/EasyPR/tree/aec8ddab4308f7e24487e97bcb32a6f5f6f17c4e
