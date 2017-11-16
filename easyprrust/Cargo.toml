@@ -1,0 +1,8 @@
+[package]
+name = "easyprrust"
+version = "0.1.0"
+authors = ["秀才遇到猫 <871063850@qq.com>"]
+
+[dependencies]
+libc ="*"
+libloading = "*"
