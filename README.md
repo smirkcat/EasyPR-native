@@ -7,6 +7,7 @@
 + [easyprgo](easyprgo)提供EasyPR的go接口，使用的库是标准c语言导出的动态库接口，所以库与python使用的相同
     - winodws使用[syscall.NewLazyDLL][6]
     - linux使用[cgo][7]
++ [easyprrust](easyprrust)提供EasyPR的rust接口，使用的库是标准c语言导出的动态库接口，所以库与python使用的相同，使用方式[libloading][9]，目前有bug暂时无法调用,，仅支持windows,unix
 + [easyprnodejs](easyprnodejs)提供EasyPR的nodejs接口，由于node addon的特殊性，使用的解决方案是动态生成的，一部分c++源码放到这个文件夹下，详情请访问此文件夹
 + [easyprjava](easyprjava)提供EasyPR的java接口
 + [easyprscala](easyprscala)提供EasyPR的scala接口
@@ -71,3 +72,4 @@
 [6]: https://github.com/golang/go/wiki/WindowsDLLs 
 [7]: https://github.com/golang/go/wiki/cgo
 [8]: https://github.com/liuruoze/EasyPR/tree/aec8ddab4308f7e24487e97bcb32a6f5f6f17c4e
+[9]: https://github.com/nagisa/rust_libloading
